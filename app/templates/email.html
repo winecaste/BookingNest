@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение бронирования отеля</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Подтверждение бронирования отеля</h1>
+    <p>Уважаемый(ая) [Имя клиента],</p>
+    <p>Благодарим вас за выбор нашего отеля. Ваше бронирование было успешно подтверждено.</p>
+    <h2>Детали бронирования:</h2>
+    <ul>
+        <li><strong>Номер брони:</strong> [Номер брони]</li>
+        <li><strong>Дата заезда:</strong> {{booking.date_from}}</li>
+        <li><strong>Дата выезда:</strong> {{booking.date_to}}</li>
+        <li><strong>Тип номера:</strong> [Тип номера]</li>
+        <li><strong>Цена:</strong> [Сумма]</li>
+    </ul>
+    <p>Если у вас возникнут какие-либо вопросы или требуется дополнительная информация, не стесняйтесь связаться с
+        нами.</p>
+    <p>Желаем вам приятного пребывания!</p>
+    <p>С наилучшими пожеланиями,<br>Команда [Имя отеля]</p>
+</div>
+</body>
+</html>
