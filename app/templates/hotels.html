@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="page-header text-center">Отели</h1>
+<div>
+    {% for hotel in hotels %}
+    <div style="display:flex; margin-bottom: 15px; margin-left: 45px;">
+        <img src="{{ url_for('static', path='images/' + hotel.image_id|string + '.webp') }}"
+        alt="Фото отеля" width="300">
+
+        <div>
+
+            <h1>{{ hotel.name }}</h1>
+            <h4>{{ hotel.location }}</h4>
+            <h4>Осталось номеров: {{ hotel.rooms_left }} из {{hotel.rooms_quantity}}</h4>
+        </div>
+
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
