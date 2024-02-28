@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="page-header text-center">Мои бронирования</h1>
+<div>
+    {% for booking in bookings %}
+    <div style="display:flex; margin-bottom: 15px; margin-left: 45px;">
+
+        <div>
+
+            <h3>{{ booking.name }}</h3>
+            <span>Дата заезда: {{ booking.date_from }}, дата выезда: {{ booking.date_to }}</span>
+
+
+        </div>
+
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
