@@ -1,0 +1,6 @@
+[tool.autoflake]
+check_diff = true
+imports = ["app", "sqlalchemy"]
+
+[tool.isort]
+profile = "black"
