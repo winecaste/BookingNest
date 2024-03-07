@@ -10,6 +10,7 @@ from fastapi_cache.backends.redis import RedisBackend
 from redis import asyncio as aioredis
 import sentry_sdk
 from sqladmin import Admin
+import streamlit as st
 
 from app.admin.auth import authentication_backend
 from app.admin.views import BookingsAdmin, HotelsAdmin, RoomsAdmin, UsersAdmin
@@ -36,7 +37,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan, title='BookingNest', description='Hotel booking service')
 
-app.mount("/static", StaticFiles(directory="app/static"), "static")
+#app.mount("app/static", StaticFiles(directory="app/static"), "static")
 
 app.include_router(router_users)
 app.include_router(router_bookings)
@@ -49,6 +50,9 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
 ]
+st.title("Podcast Transcriber")
+st.sidebar.header("Transcription section")
+st.write('Hello, *World!* :sunglasses:')
 
 app.add_middleware(
     CORSMiddleware,
